@@ -1,0 +1,56 @@
+# creates an array named array1
+from array import *
+
+array1 = array('i', [10,20,30,40,50])
+
+for x in array1:
+   print(x)
+
+#access an array element
+from array import *
+
+array1 = array('i', [10,20,30,40,50])
+
+print (array1[0])
+print (array1[1])
+print (array1[2])
+print (array1[3])
+print (array1[4])
+
+#insert one or more data elements into an array
+from array import *
+
+array1 = array('i', [10,20,30,40,50])
+
+array1.insert(1,60)
+
+for x in array1:
+   print(x)
+
+#removing an existing element from the array
+from array import *
+
+array1 = array('i', [10,20,30,40,50])
+
+array1.remove(40)
+
+for x in array1:
+   print(x)
+
+#search for an array element
+from array import *
+
+array1 = array('i', [10,20,30,40,50])
+
+print (array1.index(40))
+
+#updating an existing element from the array
+from array import *
+
+array1 = array('i', [10,20,30,40,50])
+
+array1[2] = 80
+
+for x in array1:
+   print(x)
+

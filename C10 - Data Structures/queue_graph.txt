@@ -1,0 +1,275 @@
+# QUEUE
+
+# Inserting using append()
+que = []  
+  
+que.append('Apple')  
+que.append('Mango')  
+que.append('Papaya')  
+  
+print(que)  
+  
+ 
+print(que.pop(0))  
+
+#Adding Element to a Queue (Enqueue)
+class Queue:  
+  
+  def __init__(self):  
+      self.queue = list()  
+  
+  def add_element(self,val):  
+# Insert method to add element  
+      if val not in self.queue:  
+          self.queue.insert(0,val)  
+          return True  
+      return False  
+  
+  def size(self):  
+      return len(self.queue)  
+  
+TheQueue = Queue()  
+TheQueue.add_element("jan")  
+TheQueue.add_element("feb")  
+TheQueue.add_element("march")  
+ 
+  
+print("The length of Queue: ",TheQueue.size())  
+
+#length
+
+class Queue:
+    def __init__(self):
+        self.queue = list()
+    def addtoq(self,dataval):
+        if dataval not in self.queue:
+            self.queue.insert(0,dataval)
+            return True
+        return False
+    def size(self):
+        return len(self.queue)
+
+TheQueue = Queue()
+TheQueue.addtoq("Mon")
+TheQueue.addtoq("Tue")
+TheQueue.addtoq("Wed")
+print(TheQueue.size())
+
+#Removing Element from a Queue (Dequeue)
+
+class Queue: 
+    
+    def __init__(self):  
+      self.queue = list() 
+    def __init__(self):  
+      self.queue = list()
+    def __str__(self):
+        return f'queue elements {self.queue}'
+    def add_element(self,val):  
+# Insert method to add element  
+      if val not in self.queue:  
+          self.queue.insert(0,val)  
+          return True  
+      return False  
+    def remove_element(self):  
+      if len(self.queue)>0:  
+          return self.queue.pop()  
+      return ("Queue is Empty")  
+  
+que = Queue()  
+que.add_element("January")  
+que.add_element("February")  
+que.add_element("March")  
+que.add_element("April")  
+  
+
+print(que.remove_element())  
+print(que.remove_element())  
+print(que.__str__())
+print(que.queue)
+
+queue=[]
+
+def enqueue():
+    element=input("enter the element")
+    queue.append(element)
+    print(element,"is added to queue")
+    
+def dequeue():
+    if not queue:
+        print("queue is empty")
+    else:
+        e=queue.pop(0)
+        print("removed elementis",e)
+        
+def display():
+    print(queue)
+    
+while True:
+    print("select 1.add,2.remove,3.show,4 quit\n")
+    choice=int(input())
+    if choice==1:
+        enqueue()
+    elif choice==2:
+        dequeue()
+    elif choice==3:
+        display()
+    elif choice==4:
+        break
+    else:
+        print("enter correctchoice")
+    
+#remove
+
+class Queue:
+    def __init__(self):
+        self.queue = list()
+    def addtoq(self,dataval):
+        if dataval not in self.queue:
+            self.queue.insert(0,dataval)
+            return True
+        return False
+    def removefromq(self):
+        if len(self.queue)>0:
+            return self.queue.pop()
+        return ("No elements in Queue!")
+
+TheQueue = Queue()
+TheQueue.addtoq("Mon")
+TheQueue.addtoq("Tue")
+TheQueue.addtoq("Wed")
+print(TheQueue.removefromq())
+print(TheQueue.removefromq())
+
+#GRAPH
+
+# Create the dictionary with graph elements
+graph = { 
+   "a" : ["b","c"],
+   "b" : ["a", "d"],
+   "c" : ["a", "d"],
+   "d" : ["e"],
+   "e" : ["d"]
+}
+# Print the graph 		 
+print(graph)
+
+
+#Display graph vertices
+
+class graph:
+   def __init__(self,gdict=None):
+      if gdict is None:
+         gdict = []
+      self.gdict = gdict
+# Get the keys of the dictionary
+   def getVertices(self):
+      return list(self.gdict.keys())
+# Create the dictionary with graph elements
+graph_elements = { 
+   "a" : ["b","c"],
+   "b" : ["a", "d"],
+   "c" : ["a", "d"],
+   "d" : ["e"],
+   "e" : ["d"]
+}
+g = graph(graph_elements)
+print(g.getVertices())
+
+
+#graph edges
+class graph:
+   def __init__(self,gdict=None):
+      if gdict is None:
+         gdict = {}
+      self.gdict = gdict
+
+   def edges(self):
+      return self.findedges()
+# Find the distinct list of edges
+   def findedges(self):
+      edgename = []
+      for vrtx in self.gdict:
+         for nxtvrtx in self.gdict[vrtx]:
+            if {nxtvrtx, vrtx} not in edgename:
+               edgename.append({vrtx, nxtvrtx})
+      return edgename
+# Create the dictionary with graph elements
+graph_elements = { 
+   "a" : ["b","c"],
+   "b" : ["a", "d"],
+   "c" : ["a", "d"],
+   "d" : ["e"],
+   "e" : ["d"]
+}
+g = graph(graph_elements)
+print(g.edges())
+
+
+
+#adding vertex
+class graph:
+   def __init__(self,gdict=None):
+      if gdict is None:
+         gdict = {}
+      self.gdict = gdict
+   def getVertices(self):
+      return list(self.gdict.keys())
+# Add the vertex as a key
+   def addVertex(self, vrtx):
+      if vrtx not in self.gdict:
+         self.gdict[vrtx] = []
+# Create the dictionary with graph elements
+graph_elements = { 
+   "a" : ["b","c"],
+   "b" : ["a", "d"],
+   "c" : ["a", "d"],
+   "d" : ["e"],
+   "e" : ["d"]
+}
+g = graph(graph_elements)
+g.addVertex("f")
+print(g.getVertices())
+
+
+
+#Adding Edges
+
+class graph:
+   def __init__(self,gdict=None):
+      if gdict is None:
+         gdict = {}
+      self.gdict = gdict
+   def edges(self):
+      return self.findedges()
+# Add the new edge
+   def AddEdge(self, edge):
+      edge = set(edge)
+      (vrtx1, vrtx2) = tuple(edge)
+      if vrtx1 in self.gdict:
+         self.gdict[vrtx1].append(vrtx2)
+      else:
+         self.gdict[vrtx1] = [vrtx2]
+# List the edge names
+   def findedges(self):
+      edgename = []
+      for vrtx in self.gdict:
+         for nxtvrtx in self.gdict[vrtx]:
+            if {nxtvrtx, vrtx} not in edgename:
+               edgename.append({vrtx, nxtvrtx})
+      return edgename
+# Create the dictionary with graph elements
+graph_elements = { 
+   "a" : ["b","c"],
+   "b" : ["a", "d"],
+   "c" : ["a", "d"],
+   "d" : ["e"],
+   "e" : ["d"]
+}
+g = graph(graph_elements)
+g.AddEdge({'a','e'})
+g.AddEdge({'a','d'})
+print(g.edges())
+
+
+
